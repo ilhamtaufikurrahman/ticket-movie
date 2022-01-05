@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:ticket_movie/detail_page.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -18,252 +19,6 @@ class _HomePageState extends State<HomePage> {
     'https://hype.my/wp-content/uploads/2021/02/EvAxxxGVgAEKSZl.jpeg',
   ];
 
-  static final List<Widget> _widgetOption = <Widget>[
-    SingleChildScrollView(
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          SizedBox(
-            height: 300,
-            child: PageView.builder(
-              itemCount: list.length,
-              itemBuilder: (context, index) {
-                return Image.network(
-                  list[index],
-                  fit: BoxFit.cover,
-                );
-              },
-            ),
-          ),
-          Padding(
-            padding: const EdgeInsets.all(16.0),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                const Text(
-                  'Sedang Tayang',
-                  style: TextStyle(
-                    color: Colors.white,
-                    fontSize: 24,
-                    fontWeight: FontWeight.bold,
-                  ),
-                ),
-                SizedBox(
-                  child: Row(
-                    children: const [
-                      Text(
-                        'Lihat Semua',
-                        style: TextStyle(
-                          fontSize: 10,
-                          color: Color.fromRGBO(255, 255, 255, 0.6),
-                        ),
-                      ),
-                      Icon(
-                        Icons.arrow_forward_ios,
-                        color: Color.fromRGBO(255, 255, 255, 0.6),
-                        size: 8,
-                      ),
-                    ],
-                  ),
-                ),
-              ],
-            ),
-          ),
-          SizedBox(
-            height: 260,
-            child: ListView.builder(
-              itemCount: 3,
-              scrollDirection: Axis.horizontal,
-              itemBuilder: (context, index) {
-                if (index == 0) {
-                  return Container(
-                    margin: const EdgeInsets.fromLTRB(16, 0, 8, 0),
-                    child: SizedBox(
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          ClipRRect(
-                            borderRadius: BorderRadius.circular(10),
-                            child: Image.network(
-                              'https://i2.wp.com/posterspy.com/wp-content/uploads/2021/02/SpiderMan_NoWayHome_Poster.jpg',
-                              fit: BoxFit.cover,
-                              height: 210,
-                              width: 150,
-                            ),
-                          ),
-                          const SizedBox(
-                            height: 8,
-                          ),
-                          const Text(
-                            'Star Wars: The Last',
-                            style: TextStyle(
-                                fontSize: 14,
-                                fontWeight: FontWeight.w600,
-                                color: Colors.white),
-                          ),
-                          const SizedBox(
-                            height: 8,
-                          ),
-                          RatingBar.builder(
-                            itemSize: 15,
-                            initialRating: 4,
-                            minRating: 1,
-                            direction: Axis.horizontal,
-                            allowHalfRating: true,
-                            itemCount: 5,
-                            itemPadding:
-                                const EdgeInsets.symmetric(horizontal: 4),
-                            itemBuilder: (context, index) {
-                              return const Icon(
-                                Icons.star,
-                                color: Colors.amber,
-                              );
-                            },
-                            onRatingUpdate: (rating) {
-                              print(rating);
-                            },
-                          )
-                        ],
-                      ),
-                    ),
-                  );
-                }
-                if (index == 2) {
-                  return Container(
-                    margin: const EdgeInsets.fromLTRB(8, 0, 16, 0),
-                    child: SizedBox(
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          ClipRRect(
-                            borderRadius: BorderRadius.circular(10),
-                            child: Image.network(
-                              'https://i2.wp.com/posterspy.com/wp-content/uploads/2021/02/SpiderMan_NoWayHome_Poster.jpg',
-                              fit: BoxFit.cover,
-                              height: 210,
-                              width: 150,
-                            ),
-                          ),
-                          const SizedBox(
-                            height: 8,
-                          ),
-                          const Text(
-                            'Star Wars: The Last',
-                            style: TextStyle(
-                                fontSize: 14,
-                                fontWeight: FontWeight.w600,
-                                color: Colors.white),
-                          ),
-                          const SizedBox(
-                            height: 8,
-                          ),
-                          RatingBar.builder(
-                            itemSize: 15,
-                            initialRating: 4,
-                            minRating: 1,
-                            direction: Axis.horizontal,
-                            allowHalfRating: true,
-                            itemCount: 5,
-                            itemPadding:
-                                const EdgeInsets.symmetric(horizontal: 4),
-                            itemBuilder: (context, index) {
-                              return const Icon(
-                                Icons.star,
-                                color: Colors.amber,
-                              );
-                            },
-                            onRatingUpdate: (rating) {
-                              print(rating);
-                            },
-                          )
-                        ],
-                      ),
-                    ),
-                  );
-                } else {
-                  return Container(
-                    margin: const EdgeInsets.fromLTRB(8, 0, 8, 0),
-                    child: SizedBox(
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          ClipRRect(
-                            borderRadius: BorderRadius.circular(10),
-                            child: Image.network(
-                              'https://i2.wp.com/posterspy.com/wp-content/uploads/2021/02/SpiderMan_NoWayHome_Poster.jpg',
-                              fit: BoxFit.cover,
-                              height: 210,
-                              width: 150,
-                            ),
-                          ),
-                          const SizedBox(
-                            height: 8,
-                          ),
-                          const Text(
-                            'Star Wars: The Last',
-                            style: TextStyle(
-                                fontSize: 14,
-                                fontWeight: FontWeight.w600,
-                                color: Colors.white),
-                          ),
-                          const SizedBox(
-                            height: 8,
-                          ),
-                          RatingBar.builder(
-                            itemSize: 15,
-                            initialRating: 4,
-                            minRating: 1,
-                            direction: Axis.horizontal,
-                            allowHalfRating: true,
-                            itemCount: 5,
-                            itemPadding:
-                                const EdgeInsets.symmetric(horizontal: 4),
-                            itemBuilder: (context, index) {
-                              return const Icon(
-                                Icons.star,
-                                color: Colors.amber,
-                              );
-                            },
-                            onRatingUpdate: (rating) {
-                              print(rating);
-                            },
-                          )
-                        ],
-                      ),
-                    ),
-                  );
-                }
-              },
-            ),
-          ),
-          const Padding(
-            padding: EdgeInsets.all(16.0),
-            child: Text(
-              'Voucher Deals',
-              style: TextStyle(
-                color: Colors.white,
-                fontSize: 24,
-                fontWeight: FontWeight.bold,
-              ),
-            ),
-          ),
-          SizedBox(
-            height: 150,
-            child: ListView.builder(
-              scrollDirection: Axis.horizontal,
-              itemCount: 3,
-              itemBuilder: (context, index) {
-                return Image.asset('assets/penawaran.png');
-              },
-            ),
-          )
-        ],
-      ),
-    ),
-    const Text('Index 2: Timeline'),
-    const Text('Index 2: Timeline'),
-  ];
-
   void _onItemTapped(int index) {
     setState(() {
       _selectedIndex = index;
@@ -272,6 +27,282 @@ class _HomePageState extends State<HomePage> {
 
   @override
   Widget build(BuildContext context) {
+    final List<Widget> _widgetOption = <Widget>[
+      SingleChildScrollView(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            SizedBox(
+              height: 300,
+              child: PageView.builder(
+                itemCount: list.length,
+                itemBuilder: (context, index) {
+                  return Image.network(
+                    list[index],
+                    fit: BoxFit.cover,
+                  );
+                },
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.all(16.0),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  const Text(
+                    'Sedang Tayang',
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 24,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                  SizedBox(
+                    child: Row(
+                      children: const [
+                        Text(
+                          'Lihat Semua',
+                          style: TextStyle(
+                            fontSize: 10,
+                            color: Color.fromRGBO(255, 255, 255, 0.6),
+                          ),
+                        ),
+                        Icon(
+                          Icons.arrow_forward_ios,
+                          color: Color.fromRGBO(255, 255, 255, 0.6),
+                          size: 8,
+                        ),
+                      ],
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            SizedBox(
+              height: 260,
+              child: ListView.builder(
+                itemCount: 3,
+                scrollDirection: Axis.horizontal,
+                itemBuilder: (context, index) {
+                  if (index == 0) {
+                    return InkWell(
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) {
+                            return const DetailPage();
+                          }),
+                        );
+                      },
+                      child: Container(
+                        margin: const EdgeInsets.fromLTRB(16, 0, 8, 0),
+                        child: SizedBox(
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              ClipRRect(
+                                borderRadius: BorderRadius.circular(10),
+                                child: Image.network(
+                                  'https://i2.wp.com/posterspy.com/wp-content/uploads/2021/02/SpiderMan_NoWayHome_Poster.jpg',
+                                  fit: BoxFit.cover,
+                                  height: 210,
+                                  width: 150,
+                                ),
+                              ),
+                              const SizedBox(
+                                height: 8,
+                              ),
+                              const Text(
+                                'Star Wars: The Last',
+                                style: TextStyle(
+                                    fontSize: 14,
+                                    fontWeight: FontWeight.w600,
+                                    color: Colors.white),
+                              ),
+                              const SizedBox(
+                                height: 8,
+                              ),
+                              RatingBar.builder(
+                                itemSize: 15,
+                                initialRating: 4,
+                                minRating: 1,
+                                direction: Axis.horizontal,
+                                allowHalfRating: true,
+                                itemCount: 5,
+                                itemPadding:
+                                    const EdgeInsets.symmetric(horizontal: 4),
+                                itemBuilder: (context, index) {
+                                  return const Icon(
+                                    Icons.star,
+                                    color: Colors.amber,
+                                  );
+                                },
+                                onRatingUpdate: (rating) {
+                                  print(rating);
+                                },
+                              )
+                            ],
+                          ),
+                        ),
+                      ),
+                    );
+                  }
+                  if (index == 2) {
+                    return InkWell(
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) {
+                            return const DetailPage();
+                          }),
+                        );
+                      },
+                      child: Container(
+                        margin: const EdgeInsets.fromLTRB(8, 0, 16, 0),
+                        child: SizedBox(
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              ClipRRect(
+                                borderRadius: BorderRadius.circular(10),
+                                child: Image.network(
+                                  'https://i2.wp.com/posterspy.com/wp-content/uploads/2021/02/SpiderMan_NoWayHome_Poster.jpg',
+                                  fit: BoxFit.cover,
+                                  height: 210,
+                                  width: 150,
+                                ),
+                              ),
+                              const SizedBox(
+                                height: 8,
+                              ),
+                              const Text(
+                                'Star Wars: The Last',
+                                style: TextStyle(
+                                    fontSize: 14,
+                                    fontWeight: FontWeight.w600,
+                                    color: Colors.white),
+                              ),
+                              const SizedBox(
+                                height: 8,
+                              ),
+                              RatingBar.builder(
+                                itemSize: 15,
+                                initialRating: 4,
+                                minRating: 1,
+                                direction: Axis.horizontal,
+                                allowHalfRating: true,
+                                itemCount: 5,
+                                itemPadding:
+                                    const EdgeInsets.symmetric(horizontal: 4),
+                                itemBuilder: (context, index) {
+                                  return const Icon(
+                                    Icons.star,
+                                    color: Colors.amber,
+                                  );
+                                },
+                                onRatingUpdate: (rating) {
+                                  print(rating);
+                                },
+                              )
+                            ],
+                          ),
+                        ),
+                      ),
+                    );
+                  } else {
+                    return InkWell(
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) {
+                            return const DetailPage();
+                          }),
+                        );
+                      },
+                      child: Container(
+                        margin: const EdgeInsets.fromLTRB(8, 0, 8, 0),
+                        child: SizedBox(
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              ClipRRect(
+                                borderRadius: BorderRadius.circular(10),
+                                child: Image.network(
+                                  'https://i2.wp.com/posterspy.com/wp-content/uploads/2021/02/SpiderMan_NoWayHome_Poster.jpg',
+                                  fit: BoxFit.cover,
+                                  height: 210,
+                                  width: 150,
+                                ),
+                              ),
+                              const SizedBox(
+                                height: 8,
+                              ),
+                              const Text(
+                                'Star Wars: The Last',
+                                style: TextStyle(
+                                    fontSize: 14,
+                                    fontWeight: FontWeight.w600,
+                                    color: Colors.white),
+                              ),
+                              const SizedBox(
+                                height: 8,
+                              ),
+                              RatingBar.builder(
+                                itemSize: 15,
+                                initialRating: 4,
+                                minRating: 1,
+                                direction: Axis.horizontal,
+                                allowHalfRating: true,
+                                itemCount: 5,
+                                itemPadding:
+                                    const EdgeInsets.symmetric(horizontal: 4),
+                                itemBuilder: (context, index) {
+                                  return const Icon(
+                                    Icons.star,
+                                    color: Colors.amber,
+                                  );
+                                },
+                                onRatingUpdate: (rating) {
+                                  print(rating);
+                                },
+                              )
+                            ],
+                          ),
+                        ),
+                      ),
+                    );
+                  }
+                },
+              ),
+            ),
+            const Padding(
+              padding: EdgeInsets.all(16.0),
+              child: Text(
+                'Voucher Deals',
+                style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 24,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+            ),
+            SizedBox(
+              height: 150,
+              child: ListView.builder(
+                scrollDirection: Axis.horizontal,
+                itemCount: 3,
+                itemBuilder: (context, index) {
+                  return Image.asset('assets/penawaran.png');
+                },
+              ),
+            )
+          ],
+        ),
+      ),
+      const Text('Index 2: Timeline'),
+      const Text('Index 2: Timeline'),
+    ];
+
     return Scaffold(
       backgroundColor: const Color.fromRGBO(28, 26, 41, 1),
       appBar: AppBar(
