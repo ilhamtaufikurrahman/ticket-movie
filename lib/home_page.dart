@@ -19,6 +19,14 @@ class _HomePageState extends State<HomePage> {
     'https://hype.my/wp-content/uploads/2021/02/EvAxxxGVgAEKSZl.jpeg',
   ];
 
+  static List<String> poster = [
+    'https://images.hdqwalls.com/download/spiderman-no-way-home-movie-poster-5k-nr-1080x1920.jpg',
+    'http://m.gettywallpapers.com/wp-content/uploads/2021/03/Spiderman-No-Way-Home-Wallpaper-scaled.jpg',
+    'https://i2.wp.com/posterspy.com/wp-content/uploads/2021/02/SpiderMan_NoWayHome_Poster.jpg',
+    'https://pbs.twimg.com/media/E34NVcwWUAUxkSm.jpg',
+    'https://i.pinimg.com/736x/fd/34/e0/fd34e00fb2ddf90e3c6087531ef375df.jpg',
+  ];
+
   void _onItemTapped(int index) {
     setState(() {
       _selectedIndex = index;
@@ -81,141 +89,148 @@ class _HomePageState extends State<HomePage> {
             SizedBox(
               height: 260,
               child: ListView.builder(
-                itemCount: 3,
-                scrollDirection: Axis.horizontal,
-                itemBuilder: (context, index) {
-                  if (index == 0) {
+                  itemCount: poster.length,
+                  scrollDirection: Axis.horizontal,
+                  itemBuilder: (context, index) {
+                    // if (index == 0) {
+                    //   return InkWell(
+                    //     onTap: () {
+                    //       Navigator.push(
+                    //         context,
+                    //         MaterialPageRoute(builder: (context) {
+                    //           return DetailPage(
+                    //             poster: poster[index],
+                    //           );
+                    //         }),
+                    //       );
+                    //     },
+                    //     child: Container(
+                    //       margin: const EdgeInsets.fromLTRB(16, 0, 8, 0),
+                    //       child: SizedBox(
+                    //         child: Column(
+                    //           crossAxisAlignment: CrossAxisAlignment.start,
+                    //           children: [
+                    //             ClipRRect(
+                    //               borderRadius: BorderRadius.circular(10),
+                    //               child: Hero(
+                    //                 tag: 'poster',
+                    //                 child: Image.network(
+                    //                   poster[index],
+                    //                   fit: BoxFit.cover,
+                    //                   height: 210,
+                    //                   width: 150,
+                    //                 ),
+                    //               ),
+                    //             ),
+                    //             const SizedBox(
+                    //               height: 8,
+                    //             ),
+                    //             const Text(
+                    //               'Star Wars: The Last',
+                    //               style: TextStyle(
+                    //                   fontSize: 14,
+                    //                   fontWeight: FontWeight.w600,
+                    //                   color: Colors.white),
+                    //             ),
+                    //             const SizedBox(
+                    //               height: 8,
+                    //             ),
+                    //             RatingBar.builder(
+                    //               itemSize: 15,
+                    //               initialRating: 4,
+                    //               minRating: 1,
+                    //               direction: Axis.horizontal,
+                    //               allowHalfRating: true,
+                    //               itemCount: 5,
+                    //               itemPadding:
+                    //                   const EdgeInsets.symmetric(horizontal: 4),
+                    //               itemBuilder: (context, index) {
+                    //                 return const Icon(
+                    //                   Icons.star,
+                    //                   color: Colors.amber,
+                    //                 );
+                    //               },
+                    //               onRatingUpdate: (rating) {
+                    //                 print(rating);
+                    //               },
+                    //             )
+                    //           ],
+                    //         ),
+                    //       ),
+                    //     ),
+                    //   );
+                    // }
+                    // if (index == poster.length) {
+                    //   return InkWell(
+                    //     onTap: () {
+                    //       Navigator.push(
+                    //         context,
+                    //         MaterialPageRoute(builder: (context) {
+                    //           return DetailPage(
+                    //             poster: poster[index],
+                    //           );
+                    //         }),
+                    //       );
+                    //     },
+                    //     child: Container(
+                    //       margin: const EdgeInsets.fromLTRB(8, 0, 16, 0),
+                    //       child: SizedBox(
+                    //         child: Column(
+                    //           crossAxisAlignment: CrossAxisAlignment.start,
+                    //           children: [
+                    //             ClipRRect(
+                    //               borderRadius: BorderRadius.circular(10),
+                    //               child: Image.network(
+                    //                 poster[index],
+                    //                 fit: BoxFit.cover,
+                    //                 height: 210,
+                    //                 width: 150,
+                    //               ),
+                    //             ),
+                    //             const SizedBox(
+                    //               height: 8,
+                    //             ),
+                    //             const Text(
+                    //               'Star Wars: The Last',
+                    //               style: TextStyle(
+                    //                   fontSize: 14,
+                    //                   fontWeight: FontWeight.w600,
+                    //                   color: Colors.white),
+                    //             ),
+                    //             const SizedBox(
+                    //               height: 8,
+                    //             ),
+                    //             RatingBar.builder(
+                    //               itemSize: 15,
+                    //               initialRating: 4,
+                    //               minRating: 1,
+                    //               direction: Axis.horizontal,
+                    //               allowHalfRating: true,
+                    //               itemCount: 5,
+                    //               itemPadding:
+                    //                   const EdgeInsets.symmetric(horizontal: 4),
+                    //               itemBuilder: (context, index) {
+                    //                 return const Icon(
+                    //                   Icons.star,
+                    //                   color: Colors.amber,
+                    //                 );
+                    //               },
+                    //               onRatingUpdate: (rating) {
+                    //                 print(rating);
+                    //               },
+                    //             )
+                    //           ],
+                    //         ),
+                    //       ),
+                    //     ),
+                    //   );
+                    // } else {
                     return InkWell(
                       onTap: () {
                         Navigator.push(
                           context,
                           MaterialPageRoute(builder: (context) {
-                            return const DetailPage();
-                          }),
-                        );
-                      },
-                      child: Container(
-                        margin: const EdgeInsets.fromLTRB(16, 0, 8, 0),
-                        child: SizedBox(
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              ClipRRect(
-                                borderRadius: BorderRadius.circular(10),
-                                child: Image.network(
-                                  'https://i2.wp.com/posterspy.com/wp-content/uploads/2021/02/SpiderMan_NoWayHome_Poster.jpg',
-                                  fit: BoxFit.cover,
-                                  height: 210,
-                                  width: 150,
-                                ),
-                              ),
-                              const SizedBox(
-                                height: 8,
-                              ),
-                              const Text(
-                                'Star Wars: The Last',
-                                style: TextStyle(
-                                    fontSize: 14,
-                                    fontWeight: FontWeight.w600,
-                                    color: Colors.white),
-                              ),
-                              const SizedBox(
-                                height: 8,
-                              ),
-                              RatingBar.builder(
-                                itemSize: 15,
-                                initialRating: 4,
-                                minRating: 1,
-                                direction: Axis.horizontal,
-                                allowHalfRating: true,
-                                itemCount: 5,
-                                itemPadding:
-                                    const EdgeInsets.symmetric(horizontal: 4),
-                                itemBuilder: (context, index) {
-                                  return const Icon(
-                                    Icons.star,
-                                    color: Colors.amber,
-                                  );
-                                },
-                                onRatingUpdate: (rating) {
-                                  print(rating);
-                                },
-                              )
-                            ],
-                          ),
-                        ),
-                      ),
-                    );
-                  }
-                  if (index == 2) {
-                    return InkWell(
-                      onTap: () {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(builder: (context) {
-                            return const DetailPage();
-                          }),
-                        );
-                      },
-                      child: Container(
-                        margin: const EdgeInsets.fromLTRB(8, 0, 16, 0),
-                        child: SizedBox(
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              ClipRRect(
-                                borderRadius: BorderRadius.circular(10),
-                                child: Image.network(
-                                  'https://i2.wp.com/posterspy.com/wp-content/uploads/2021/02/SpiderMan_NoWayHome_Poster.jpg',
-                                  fit: BoxFit.cover,
-                                  height: 210,
-                                  width: 150,
-                                ),
-                              ),
-                              const SizedBox(
-                                height: 8,
-                              ),
-                              const Text(
-                                'Star Wars: The Last',
-                                style: TextStyle(
-                                    fontSize: 14,
-                                    fontWeight: FontWeight.w600,
-                                    color: Colors.white),
-                              ),
-                              const SizedBox(
-                                height: 8,
-                              ),
-                              RatingBar.builder(
-                                itemSize: 15,
-                                initialRating: 4,
-                                minRating: 1,
-                                direction: Axis.horizontal,
-                                allowHalfRating: true,
-                                itemCount: 5,
-                                itemPadding:
-                                    const EdgeInsets.symmetric(horizontal: 4),
-                                itemBuilder: (context, index) {
-                                  return const Icon(
-                                    Icons.star,
-                                    color: Colors.amber,
-                                  );
-                                },
-                                onRatingUpdate: (rating) {
-                                  print(rating);
-                                },
-                              )
-                            ],
-                          ),
-                        ),
-                      ),
-                    );
-                  } else {
-                    return InkWell(
-                      onTap: () {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(builder: (context) {
-                            return const DetailPage();
+                            return DetailPage(poster: poster[index]);
                           }),
                         );
                       },
@@ -227,11 +242,14 @@ class _HomePageState extends State<HomePage> {
                             children: [
                               ClipRRect(
                                 borderRadius: BorderRadius.circular(10),
-                                child: Image.network(
-                                  'https://i2.wp.com/posterspy.com/wp-content/uploads/2021/02/SpiderMan_NoWayHome_Poster.jpg',
-                                  fit: BoxFit.cover,
-                                  height: 210,
-                                  width: 150,
+                                child: Hero(
+                                  tag: poster[index],
+                                  child: Image.network(
+                                    poster[index],
+                                    fit: BoxFit.cover,
+                                    height: 210,
+                                    width: 150,
+                                  ),
                                 ),
                               ),
                               const SizedBox(
@@ -272,8 +290,8 @@ class _HomePageState extends State<HomePage> {
                       ),
                     );
                   }
-                },
-              ),
+                  // },
+                  ),
             ),
             const Padding(
               padding: EdgeInsets.all(16.0),
