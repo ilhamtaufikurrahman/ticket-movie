@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:ticket_movie/detail_page.dart';
+import 'package:ticket_movie/list_movie_page.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -65,22 +66,30 @@ class _HomePageState extends State<HomePage> {
                       fontWeight: FontWeight.bold,
                     ),
                   ),
-                  SizedBox(
-                    child: Row(
-                      children: const [
-                        Text(
-                          'Lihat Semua',
-                          style: TextStyle(
-                            fontSize: 10,
-                            color: Color.fromRGBO(255, 255, 255, 0.6),
+                  InkWell(
+                    onTap: () {
+                      Navigator.push(context,
+                          MaterialPageRoute(builder: (context) {
+                        return const ListMoviePage();
+                      }));
+                    },
+                    child: SizedBox(
+                      child: Row(
+                        children: const [
+                          Text(
+                            'Lihat Semua',
+                            style: TextStyle(
+                              fontSize: 10,
+                              color: Color.fromRGBO(255, 255, 255, 0.6),
+                            ),
                           ),
-                        ),
-                        Icon(
-                          Icons.arrow_forward_ios,
-                          color: Color.fromRGBO(255, 255, 255, 0.6),
-                          size: 8,
-                        ),
-                      ],
+                          Icon(
+                            Icons.arrow_forward_ios,
+                            color: Color.fromRGBO(255, 255, 255, 0.6),
+                            size: 8,
+                          ),
+                        ],
+                      ),
                     ),
                   ),
                 ],
